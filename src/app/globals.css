@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-poppins), var(--font-space-grotesk), ui-sans-serif, system-ui;
+}
+
+:root {
+  /* Dark Theme - Modern Elegant Colors with Improved Contrast */
+  --color-bg-primary: #000000; /* Pure black background */
+  --color-bg-primary-rgb: 0, 0, 0; /* RGB values for primary background */
+  --color-bg-secondary: #1a1a2e; /* Slightly lighter blue-purple */
+  --color-bg-secondary-rgb: 26, 26, 46; /* RGB values for secondary background */
+  --color-bg-tertiary: #242444; /* Medium blue-purple with better contrast */
+  --color-bg-tertiary-rgb: 36, 36, 68; /* RGB values for tertiary background */
+  --color-text-primary: #ffffff; /* Pure white text for better readability */
+  --color-text-secondary: #d8d8f0; /* Lighter muted text for better contrast */
+  --color-accent: #a5b0ff; /* Brighter purple accent for better visibility */
+  --color-accent-rgb: 165, 176, 255; /* RGB values for accent color */
+  --color-accent-hover: #bbc3ff; /* Lighter purple hover state */
+  --color-accent-secondary: #ffc8a8; /* Brighter peach accent for better contrast */
+  --color-accent-tertiary: #b8e8de; /* Brighter mint accent for better contrast */
+  --color-border: #4a4a7e; /* Brighter border for better visibility */
+  --color-border-rgb: 74, 74, 126; /* RGB values for border color */
+  --color-card: #242444; /* Card background with better contrast */
+  --color-card-rgb: 36, 36, 68; /* RGB values for card background */
+  --color-card-hover: #2e2e56; /* Card hover state with better contrast */
+
+  /* Priority Colors - Pastel Variants - matching light theme */
+  --color-priority-high: #ff9f9f; /* Soft coral */
+  --color-priority-medium: #ffcf86; /* Soft amber */
+  --color-priority-low: #a5d8ce; /* Soft mint */
+
+  /* Status Colors - Brighter Variants for Dark Mode */
+  --color-status-todo: #a5aed0; /* Brighter slate blue */
+  --color-status-in-progress: #ffc8a8; /* Brighter peach */
+  --color-status-review: #d8c0ff; /* Brighter lavender */
+  --color-status-done: #b8e8de; /* Brighter mint */
+
+  /* Gradients - Soft Pastels - matching light theme */
+  --gradient-primary: linear-gradient(135deg, #7b83c9 0%, #a5b0ff 100%); /* Soft purple gradient */
+  --gradient-secondary: linear-gradient(135deg, #ffb88c 0%, #ffd8b8 100%); /* Soft peach gradient */
+  --gradient-accent: linear-gradient(135deg, #ffcf86 0%, #ffe0b0 100%); /* Soft amber gradient */
+  --gradient-success: linear-gradient(135deg, #a5d8ce 0%, #c4e7e0 100%); /* Soft mint gradient */
+
+  /* Animation Timing */
+  --animation-speed-fast: 150ms;
+  --animation-speed-medium: 300ms;
+  --animation-speed-slow: 500ms;
+
+  /* Animation Curves */
+  --animation-curve-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --animation-curve-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-curve-sharp: cubic-bezier(0.4, 0, 0.6, 1);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Base Styles */
+@layer base {
+  body {
+    @apply font-sans text-text-primary m-0 p-0 min-h-screen overflow-x-hidden relative;
+    background-color: #f2f0ea;
+    background-image: linear-gradient(to bottom, rgba(242, 240, 234, 0.8), rgba(235, 232, 225, 0.5));
+  }
+
+  :root:not(.light-theme) body {
+    background-color: #1e1e28;
+    background-image: linear-gradient(to bottom, rgba(30, 30, 40, 0.8), rgba(25, 25, 35, 0.5));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  a {
+    @apply no-underline text-inherit;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-primary bg-clip-text text-transparent relative z-10;
+    text-shadow: 0 2px 10px rgba(58, 134, 255, 0.2);
+  }
+
+  .btn-primary {
+    @apply bg-gradient-secondary text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 border border-transparent inline-block cursor-pointer shadow-md hover:scale-[1.03] hover:translate-y-[-3px] hover:shadow-xl active:translate-y-[1px] relative overflow-hidden;
+    box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-white opacity-0 transition-opacity duration-300;
+  }
+
+  .btn-primary:hover::before {
+    @apply opacity-10;
+  }
+
+  .btn-primary::after {
+    content: '';
+    @apply absolute top-0 left-[-100%] w-full h-full bg-white opacity-20 transition-all duration-700 transform skew-x-[-20deg];
+  }
+
+  .btn-primary:hover::after {
+    @apply left-[100%];
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-text-primary py-3 px-6 rounded-lg font-medium transition-all duration-300 border border-border inline-block cursor-pointer shadow-sm hover:text-accent hover:translate-y-[-3px] hover:shadow-md active:translate-y-[1px] relative overflow-hidden;
+    border-color: rgba(var(--color-border-rgb), 0.6);
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(var(--color-accent-rgb), 0.7);
+    background-color: rgba(var(--color-accent-rgb), 0.05);
+  }
+
+  .btn-outline::before {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-primary transition-all duration-300;
+  }
+
+  .btn-outline:hover::before {
+    @apply w-full;
+  }
+
+  .btn-accent {
+    @apply bg-gradient-accent text-white py-3 px-6 rounded-md font-medium transition-all duration-200 border border-transparent inline-block cursor-pointer shadow-md ml-2 hover:scale-[1.02] hover:translate-y-[-2px] hover:shadow-lg active:translate-y-[1px];
+  }
+
+  .card {
+    @apply bg-card rounded-lg border border-border p-6 transition-all duration-300 hover:bg-card-hover hover:translate-y-[-2px] hover:shadow-lg;
+  }
+
+  .glass {
+    @apply bg-opacity-80 backdrop-blur-md border shadow-lg;
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .task-card {
+    @apply bg-opacity-80 backdrop-blur-sm border rounded-xl p-5 mb-5 relative cursor-pointer transition-all duration-300 shadow-card hover:translate-y-[-4px] hover:shadow-card-hover hover:bg-opacity-90 border-l-4 border-l-status-todo;
+    border-color: rgba(var(--color-border-rgb), 0.8);
+  }
+
+  .task-card:hover {
+    border-color: rgba(var(--color-accent-rgb), 0.4);
+  }
+
+  .task-card[data-status="todo"] {
+    @apply border-l-status-todo;
+  }
+
+  .task-card[data-status="in-progress"] {
+    @apply border-l-status-in-progress;
+  }
+
+  .task-card[data-status="review"] {
+    @apply border-l-status-review;
+  }
+
+  .task-card[data-status="done"] {
+    @apply border-l-status-done;
+  }
+
+  .kanban-column {
+    @apply bg-opacity-50 backdrop-blur-md rounded-xl border shadow-md flex flex-col min-h-[200px] max-h-full transition-all duration-300 relative overflow-hidden hover:translate-y-[-2px] hover:shadow-lg;
+    border-color: rgba(255, 255, 255, 0.05);
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .kanban-column::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-1 bg-gradient-primary opacity-70;
+  }
+
+  .kanban-column:nth-child(2)::before {
+    @apply bg-gradient-accent;
+  }
+
+  .kanban-column:nth-child(3)::before {
+    @apply bg-gradient-tertiary;
+  }
+
+  .kanban-column:nth-child(4)::before {
+    @apply bg-gradient-to-r from-status-done to-accent-tertiary;
+  }
+}
+
+/* Light Theme - Calm Aesthetic */
+html.light-theme, body.light-theme, .light-theme {
+  /* Base Colors */
+  --color-bg-primary: #ffffff !important; /* Pure white background */
+  --color-bg-primary-rgb: 255, 255, 255 !important; /* RGB values for primary background */
+  --color-bg-secondary: #f8f6f2 !important; /* Warm cream secondary */
+  --color-bg-secondary-rgb: 248, 246, 242 !important; /* RGB values for secondary background */
+  --color-bg-tertiary: #e8e5dd !important; /* Subtle cream accent */
+  --color-bg-tertiary-rgb: 232, 229, 221 !important; /* RGB values for tertiary background */
+  --color-text-primary: #3a3a4a !important; /* Soft dark text */
+  --color-text-secondary: #6e6e82 !important; /* Muted secondary text */
+  --color-border: #c9c0b2 !important; /* Darker cream border for better visibility */
+  --color-border-rgb: 201, 192, 178 !important; /* RGB values for border color */
+  --color-card: #f8f6f2 !important; /* Beige card instead of white */
+  --color-card-rgb: 248, 246, 242 !important; /* RGB values for card background */
+  --color-card-hover: #f5f2ec !important; /* Warm hover state */
+
+  /* Accent Colors - Soft Pastels */
+  --color-accent: #7b83c9 !important; /* Soft purple accent - from reference */
+  --color-accent-rgb: 123, 131, 201 !important; /* RGB values for accent color */
+  --color-accent-hover: #6a73b8 !important; /* Deeper purple */
+  --color-accent-secondary: #ffb88c !important; /* Soft peach accent - from reference */
+  --color-accent-tertiary: #a5d8ce !important; /* Soft mint accent */
+
+  /* Status Colors - Pastel Variants */
+  --color-status-todo: #8e97b7 !important; /* Soft slate blue */
+  --color-status-in-progress: #ffb88c !important; /* Soft peach */
+  --color-status-review: #c4a8ff !important; /* Soft lavender */
+  --color-status-done: #a5d8ce !important; /* Soft mint */
+
+  /* Priority Colors - Pastel Variants */
+  --color-priority-high: #ff9f9f !important; /* Soft coral */
+  --color-priority-medium: #ffcf86 !important; /* Soft amber */
+  --color-priority-low: #a5d8ce !important; /* Soft mint */
+
+  /* Gradients - Soft Pastels */
+  --gradient-primary: linear-gradient(135deg, #7b83c9 0%, #a5b0ff 100%) !important; /* Soft purple gradient */
+  --gradient-secondary: linear-gradient(135deg, #ffb88c 0%, #ffd8b8 100%) !important; /* Soft peach gradient */
+  --gradient-accent: linear-gradient(135deg, #ffcf86 0%, #ffe0b0 100%) !important; /* Soft amber gradient */
+  --gradient-success: linear-gradient(135deg, #a5d8ce 0%, #c4e7e0 100%) !important; /* Soft mint gradient */
+}

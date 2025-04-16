@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Dark Theme</title>
+    <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21,12.79 C20.5623508,17.5258084 16.5155205,21 12,21 C6.4771525,21 2,16.5228475 2,11 C2,6.4844795 5.47419159,2.43764925 10.21,2 C7.70557963,4.9463116 7.70557963,9.0536884 10.21,12 C13.1563116,14.5055796 17.2636884,14.5055796 20.21,12 C20.7428461,12.2225686 21,12.79 21,12.79 Z"></path>
+    </g>
+</svg>

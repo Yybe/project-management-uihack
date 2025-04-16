@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Team</title>
+    <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17,21 L17,19 C17,16.790861 15.209139,15 13,15 L5,15 C2.790861,15 1,16.790861 1,19 L1,21"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23,21 L23,19 C22.9986214,17.1771177 21.7649111,15.5857202 20,15.13"></path>
+        <path d="M16,3.13 C17.7699324,3.58317263 19.0078219,5.17712105 19.0078219,7.0050051 C19.0078219,8.83288915 17.7699324,10.4268376 16,10.88"></path>
+    </g>
+</svg>

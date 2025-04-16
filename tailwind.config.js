@@ -1,0 +1,120 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    opacity: {
+      '0': '0',
+      '5': '0.05',
+      '10': '0.1',
+      '15': '0.15',
+      '20': '0.2',
+      '30': '0.3',
+      '40': '0.4',
+      '50': '0.5',
+      '60': '0.6',
+      '70': '0.7',
+      '80': '0.8',
+      '90': '0.9',
+      '95': '0.95',
+      '100': '1',
+    },
+    scale: {
+      '0': '0',
+      '50': '.5',
+      '75': '.75',
+      '90': '.9',
+      '95': '.95',
+      '100': '1',
+      '105': '1.05',
+      '110': '1.1',
+      '115': '1.15',
+      '125': '1.25',
+      '150': '1.5',
+    },
+    fontFamily: {
+      sans: ['var(--font-sans)'],
+      display: ['var(--font-display)'],
+    },
+    extend: {
+      colors: {
+        // TaskVerse colors using CSS variables
+        'bg-primary': 'var(--color-bg-primary)',
+        'bg-secondary': 'var(--color-bg-secondary)',
+        'bg-tertiary': 'var(--color-bg-tertiary)',
+        'text-primary': 'var(--color-text-primary)',
+        'text-secondary': 'var(--color-text-secondary)',
+        'accent': 'var(--color-accent)',
+        'accent-hover': 'var(--color-accent-hover)',
+        'accent-secondary': 'var(--color-accent-secondary)',
+        'accent-tertiary': 'var(--color-accent-tertiary)',
+        'border': 'var(--color-border)',
+        'card': 'var(--color-card)',
+        'card-hover': 'var(--color-card-hover)',
+        // Priority colors
+        'priority-high': 'var(--color-priority-high)',
+        'priority-medium': 'var(--color-priority-medium)',
+        'priority-low': 'var(--color-priority-low)',
+        // Status colors
+        'status-todo': 'var(--color-status-todo)',
+        'status-in-progress': 'var(--color-status-in-progress)',
+        'status-review': 'var(--color-status-review)',
+        'status-done': 'var(--color-status-done)',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+      },
+      boxShadow: {
+        'sm': '0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)',
+        'md': '0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
+        'lg': '0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)',
+        'xl': '0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04)',
+        'card': '0 4px 6px rgba(0, 0, 0, 0.1)',
+        'card-hover': '0 8px 15px rgba(0, 0, 0, 0.2)',
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-secondary': 'var(--gradient-secondary)',
+        'gradient-accent': 'linear-gradient(135deg, var(--color-accent-secondary), #7a3dd9)',
+        'gradient-tertiary': 'linear-gradient(to right, var(--color-accent-tertiary), var(--color-accent))',
+      },
+      animation: {
+        'pulse-logo': 'pulse-logo 2s infinite alternate ease-in-out',
+        'fade-in-out': 'fade-in-out 1.5s infinite alternate ease-in-out',
+        'card-enter': 'card-enter 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        'status-change': 'status-change 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+      },
+      keyframes: {
+        'pulse-logo': {
+          '0%': { transform: 'scale(1)', filter: 'brightness(1)' },
+          '100%': { transform: 'scale(1.05)', filter: 'brightness(1.2)' },
+        },
+        'fade-in-out': {
+          '0%': { opacity: '0.5' },
+          '100%': { opacity: '1' },
+        },
+        'card-enter': {
+          'from': { opacity: '0', transform: 'translateY(10px)' },
+          'to': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'status-change': {
+          '0%': { boxShadow: '0 0 0 0 rgba(58, 134, 255, 0.7)', transform: 'translateY(0)' },
+          '30%': { boxShadow: '0 0 20px 5px rgba(58, 134, 255, 0.5)', transform: 'translateY(-5px)' },
+          '70%': { boxShadow: '0 0 10px 2px rgba(58, 134, 255, 0.3)', transform: 'translateY(-2px)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(58, 134, 255, 0)', transform: 'translateY(0)' },
+        },
+      },
+      transitionTimingFunction: {
+        'bounce': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'sharp': 'cubic-bezier(0.4, 0, 0.6, 1)',
+      },
+    },
+  },
+  plugins: [],
+}
